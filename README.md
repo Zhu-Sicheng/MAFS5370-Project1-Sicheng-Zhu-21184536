@@ -1,33 +1,37 @@
-# MAFS5370 Project 1: Reinforcement Learning for Portfolio Optimization
+# MAFS5370 Project 1 Sicheng Zhu 21184536
 
-## 1. Project Introduction
-This project implements and compares seven different Reinforcement Learning (RL) algorithms to solve a dynamic portfolio optimization problem. The goal is to maximize the expected CRRA utility of final wealth over a fixed time horizon by dynamically adjusting asset weights.
+## 1. Project Overview
+This project explores the application of various Reinforcement Learning (RL) algorithms to a discrete-time portfolio management problem. The objective is to determine an optimal asset allocation strategy that maximizes the cumulative CRRA utility of final wealth over a fixed time horizon.
 
-## 2. Environment Configuration
-- **Time Horizon (T)**: 8 periods
-- **Assets**: 3 Risky Assets + 1 Risk-free Asset
-- **Parameters**:
-  - Expected Returns: `[-0.5, 0.5, 0.0]`
-  - Variances: `[0.25, 0.25, 0.5]`
-  - Risk-free Rate: `0.02`
-  - Initial Wealth: `1.0` (Equally weighted at start)
+We implement and compare seven different algorithms, ranging from simple baselines to sophisticated actor-critic methods, to evaluate their performance in a simulated financial environment.
+
+## 2. Environment Description
+The environment simulates a market with both risky and risk-free assets:
+- **Time Horizon (T)**: 8 investment periods.
+- **Asset Universe**: 
+    - 3 Risky Assets with varying expected returns `[-0.5, 0.5, 0.0]` and variances `[0.25, 0.25, 0.5]`.
+    - 1 Risk-free Asset with a constant return of `0.02`.
+- **Initial State**: Wealth $W_0 = 1.0$, with an equal weight distribution `[0.25, 0.25, 0.25, 0.25]`.
 - **Constraints**: 
-  - No short selling allowed.
-  - Action space discretized: weight changes $\in [-0.1, 0.1]$ with step 0.01.
-  - Total absolute weight adjustment per step $\leq 0.1$.
-- **Utility Function**: CRRA Utility $U(W) = -\exp(-\gamma W)$ with $\gamma=1.0$.
+    - No short selling is allowed.
+    - Weights must sum to 1.
+    - Transaction limits: Maximum weight adjustment per asset is $\pm 0.1$ per step, with a total absolute adjustment limit of $0.1$.
+- **Utility Function**: Constant Relative Risk Aversion (CRRA) utility:
+  $$U(W) = -\exp(-\gamma W)$$
+  where the risk aversion parameter $\gamma = 1.0$.
 
-## 3. Algorithms Evaluated
-1.  **Greedy (Baseline)**: One-step return maximization.
-2.  **Q-Learning**: Value-based RL with Adam adaptive learning rate.
-3.  **REINFORCE**: Policy gradient method.
-4.  **Actor-Critic**: Combined value and policy optimization.
-5.  **A3C**: Asynchronous Advantage Actor-Critic.
-6.  **PPO**: Proximal Policy Optimization (clipped objective).
-7.  **TRPO**: Trust Region Policy Optimization (KL-divergence constraint).
+## 3. Algorithms Implemented
+The following algorithms are evaluated:
+1.  **Greedy (Baseline)**: Always selects the action that maximizes the one-step expected return.
+2.  **Q-Learning**: A value-based method using an Adam-style adaptive learning rate for efficient convergence.
+3.  **REINFORCE**: A basic policy gradient method that updates the policy network based on the total return.
+4.  **Actor-Critic**: Combines value-based and policy-based methods to reduce variance.
+5.  **A3C (Asynchronous Advantage Actor-Critic)**: Uses parallel workers to stabilize training.
+6.  **PPO (Proximal Policy Optimization)**: A robust policy gradient method using clipped updates.
+7.  **TRPO (Trust Region Policy Optimization)**: Constrains policy updates within a trust region.
 
-## 4. Experimental Results
-Based on the latest training run (3000 episodes) and evaluation (500 episodes), the performance metrics are as follows:
+## 4. Key Findings
+- **Experimental Results**: After 3000 episodes of training, the performance metrics (evaluated over 500 episodes) are summarized as follows:
 
 | Algorithm | Mean Utility | Std Utility | Mean Wealth | Std Wealth |
 | :--- | :---: | :---: | :---: | :---: |
@@ -39,18 +43,16 @@ Based on the latest training run (3000 episodes) and evaluation (500 episodes), 
 | **Q-Learning** | -0.3276 | 0.1142 | 1.1777 | 0.3585 |
 | **TRPO** | -0.6464 | 0.2123 | 0.5089 | 0.4245 |
 
-<img width="1590" height="989" alt="image" src="https://github.com/user-attachments/assets/1cf2383e-bbb5-471a-9aa3-a48281f3ee00" />
+- **Performance Analysis**:
+    - **Greedy Dominance**: The Greedy algorithm performs best due to the high return of a specific asset (0.5) and the short horizon (T=8).
+    - **RL Leaders**: **A3C** and **REINFORCE** are the top-performing RL agents, successfully learning growth strategies.
+    - **Stability**: **PPO** and **Q-Learning** show lower variance in wealth, indicating more conservative but stable behavior.
+    - **Visualizations**: The project generates plots comparing learning curves and distributions, saved as `portfolio_rl_comparison.png`.
 
-### Result Analysis
-- **Dominance of Greedy Baseline**: The Greedy algorithm achieved the best results. This is due to the environment setup where one asset has a high expected return (0.5), and the short horizon (T=8) allows simple momentum-like strategies to outperform complex RL agents.
-- **Top RL Performers**: **A3C** and **REINFORCE** are the strongest RL algorithms in this scenario, effectively learning to capture high-return assets while managing risk.
-- **Stability vs. Performance**: **PPO** and **Q-Learning** demonstrated significantly lower variance (Std Wealth), indicating more stable and predictable portfolio management, albeit with lower average returns compared to A3C.
-- **TRPO Challenges**: TRPO showed the lowest performance, likely due to its conservative trust-region updates which struggled to explore the discretized action space effectively within 3000 episodes.
-
-## 5. Usage Instructions
-1. Install dependencies: `numpy`, `torch`, `matplotlib`, `tqdm`.
-2. Run the notebook `Project1-MAFS5370.ipynb`.
-3. The training logs and comparison plots (`portfolio_rl_comparison.png`) will be generated automatically.
+## 5. Usage
+1. Ensure dependencies are installed: `numpy`, `matplotlib`, `torch`, `tqdm`.
+2. Open and execute the Jupyter Notebook `Project1-MAFS5370.ipynb`.
+3. Results and comparison charts will be displayed inline and exported.
 
 ---
-*MAFS5370 Project 1 - Academic Report*
+*MAFS5370 Project 1 - Sicheng Zhu 21184536*
