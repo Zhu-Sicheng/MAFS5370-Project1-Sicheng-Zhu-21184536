@@ -5,7 +5,7 @@ This project explores the application of various Reinforcement Learning (RL) alg
 
 We implement and compare seven different algorithms, ranging from simple baselines to sophisticated actor-critic methods, to evaluate their performance in a simulated financial environment.
 
-## 2. Environment Description
+## 2. Demo Environment Description
 The environment simulates a market with both risky and risk-free assets:
 - **Time Horizon (T)**: 8 investment periods.
 - **Asset Universe**: 
@@ -13,7 +13,7 @@ The environment simulates a market with both risky and risk-free assets:
     - 1 Risk-free Asset with a constant return of `0.02`.
 - **Initial State**: Wealth $W_0 = 1.0$, with an equal weight distribution `[0.25, 0.25, 0.25, 0.25]`.
 - **Constraints**: 
-    - No short selling is allowed.
+    - No short selling is allowed(but short selling is optimal).
     - Weights must sum to 1.
     - Transaction limits: Maximum weight adjustment per asset is $\pm 0.1$ per step, with a total absolute adjustment limit of $0.1$.
 - **Utility Function**: Constant Relative Risk Aversion (CRRA) utility:
@@ -44,7 +44,7 @@ The following algorithms are evaluated:
 | **TRPO** | -0.6464 | 0.2123 | 0.5089 | 0.4245 |
 
 - **Performance Analysis**:
-    - **Greedy Dominance**: The Greedy algorithm performs best due to the high return of a specific asset (0.5) and the short horizon (T=8).
+    - **Greedy Dominance**: The Greedy algorithm performs best due to the high return of a specific asset (0.5) and horizon (T=8).
     - **RL Leaders**: **A3C** and **REINFORCE** are the top-performing RL agents, successfully learning growth strategies.
     - **Stability**: **PPO** and **Q-Learning** show lower variance in wealth, indicating more conservative but stable behavior.
     - **Visualizations**: The project generates plots comparing learning curves and distributions.
