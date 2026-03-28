@@ -1,4 +1,4 @@
-# MAFS5370 Project 1 Sicheng Zhu 21184536
+<img width="1789" height="1190" alt="image" src="https://github.com/user-attachments/assets/2d9ce78a-4d1b-4db1-bcd6-f3953fa73245" /># MAFS5370 Project 1 Sicheng Zhu 21184536
 
 ## 1. Project Overview
 This project explores the application of various Reinforcement Learning (RL) algorithms to a discrete-time portfolio management problem. The objective is to determine an optimal asset allocation strategy that maximizes the cumulative CRRA utility of final wealth over a fixed time horizon.
@@ -51,6 +51,9 @@ After training for 3000 episodes and evaluating over 500 test episodes, the perf
 
 ## 5. Visualizations
 The project generates comprehensive plots comparing the learning curves (Utility and Wealth) and final performance distributions across all algorithms.
+
+<img width="1789" height="1190" alt="image" src="https://github.com/user-attachments/assets/9c69ec0c-e9f5-4463-bfd5-66980393548e" />
+
 
 ## 6. Usage
 To run the analysis:
