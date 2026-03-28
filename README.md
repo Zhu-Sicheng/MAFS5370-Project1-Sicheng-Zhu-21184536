@@ -1,5 +1,5 @@
 # Portfolio Optimization with Reinforcement Learning
-## MAFS5370 Project 1
+## MAFS5370 Project 1 Sicheng Zhu 21184536
 
 ---
 
