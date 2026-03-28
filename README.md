@@ -47,7 +47,9 @@ The following algorithms are evaluated:
     - **Greedy Dominance**: The Greedy algorithm performs best due to the high return of a specific asset (0.5) and the short horizon (T=8).
     - **RL Leaders**: **A3C** and **REINFORCE** are the top-performing RL agents, successfully learning growth strategies.
     - **Stability**: **PPO** and **Q-Learning** show lower variance in wealth, indicating more conservative but stable behavior.
-    - **Visualizations**: The project generates plots comparing learning curves and distributions, saved as `portfolio_rl_comparison.png`.
+    - **Visualizations**: The project generates plots comparing learning curves and distributions.
+
+<img width="1590" height="989" alt="image" src="https://github.com/user-attachments/assets/b87fcc3a-66dd-4138-88f6-f2c38416a505" />
 
 ## 5. Usage
 1. Ensure dependencies are installed: `numpy`, `matplotlib`, `torch`, `tqdm`.
