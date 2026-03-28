@@ -101,7 +101,7 @@ Trust Region Policy Optimization with KL divergence constraint.
 
 ---
 
-## 4. Experimental Setup
+## 4. Demo Experimental Setup
 
 | Parameter | Value |
 |-----------|-------|
