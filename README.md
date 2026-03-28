@@ -39,6 +39,8 @@ Based on the latest training run (3000 episodes) and evaluation (500 episodes), 
 | **Q-Learning** | -0.3276 | 0.1142 | 1.1777 | 0.3585 |
 | **TRPO** | -0.6464 | 0.2123 | 0.5089 | 0.4245 |
 
+<img width="1590" height="989" alt="image" src="https://github.com/user-attachments/assets/1cf2383e-bbb5-471a-9aa3-a48281f3ee00" />
+
 ### Result Analysis
 - **Dominance of Greedy Baseline**: The Greedy algorithm achieved the best results. This is due to the environment setup where one asset has a high expected return (0.5), and the short horizon (T=8) allows simple momentum-like strategies to outperform complex RL agents.
 - **Top RL Performers**: **A3C** and **REINFORCE** are the strongest RL algorithms in this scenario, effectively learning to capture high-return assets while managing risk.
