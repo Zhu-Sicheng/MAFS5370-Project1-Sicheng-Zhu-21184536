@@ -1,4 +1,4 @@
-# MAFS5370 Project 1: Reinforcement Learning for Dynamic Portfolio Optimization
+# MAFS5370 Project 1 Sicheng Zhu 21184536
 
 ## 1. Project Overview
 This project explores the application of various Reinforcement Learning (RL) algorithms to a discrete-time portfolio management problem. The objective is to determine an optimal asset allocation strategy that maximizes the cumulative CRRA utility of final wealth over a fixed time horizon.
@@ -50,7 +50,7 @@ After training for 3000 episodes and evaluating over 500 test episodes, the perf
 - **TRPO Performance**: In this specific discrete and low-horizon environment, TRPO was overly conservative, leading to the lowest wealth accumulation.
 
 ## 5. Visualizations
-The project generates comprehensive plots comparing the learning curves (Utility and Wealth) and final performance distributions across all algorithms. The final summary plot is saved as `portfolio_rl_comparison.png`.
+The project generates comprehensive plots comparing the learning curves (Utility and Wealth) and final performance distributions across all algorithms.
 
 ## 6. Usage
 To run the analysis:
@@ -59,4 +59,4 @@ To run the analysis:
 3. The results will be displayed inline and the comparison chart will be exported.
 
 ---
-*MAFS5370 Project 1 - Reinforcement Learning in Finance*
+*MAFS5370 Project 1 - Sicheng Zhu 21184536*
