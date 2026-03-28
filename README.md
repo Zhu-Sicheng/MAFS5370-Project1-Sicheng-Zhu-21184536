@@ -3,7 +3,7 @@
 ## 1. Project Overview
 This project explores the application of various Reinforcement Learning (RL) algorithms to a discrete-time portfolio management problem. The objective is to determine an optimal asset allocation strategy that maximizes the cumulative CRRA utility of final wealth over a fixed time horizon.
 
-We implement and compare seven different algorithms, ranging from simple baselines to sophisticated actor-critic methods, to evaluate their performance in a simulated financial environment.
+Seven algorithms are implemented and compared, ranging from simple baselines to sophisticated actor-critic methods, to evaluate their performance in a simulated financial environment.
 
 ## 2. Demo Environment Description
 The environment simulates a market with both risky and risk-free assets:
