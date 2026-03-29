@@ -150,4 +150,4 @@ After training (3000 episodes) and evaluation (500 episodes), the notebook repor
 3. The notebook prints training/evaluation summaries and saves two PNG figures in the project folder.
 
 ---
-MAFS5370 Project 1 — Reinforcement Learning for Dynamic Portfolio Optimization
+MAFS5370 Project 1 Sicheng Zhu 21184536
