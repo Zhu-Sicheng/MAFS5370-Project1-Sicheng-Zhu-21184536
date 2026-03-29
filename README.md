@@ -126,7 +126,8 @@ After training (3000 episodes) and evaluation (500 episodes), the notebook repor
 | **TRPO** | -0.6464 | 0.2123 | 0.5089 | 0.4245 |
 
 ## 7. Figures
-![Portfolio RL comparison](portfolio_rl_comparison.png)
+<img width="1590" height="989" alt="image" src="https://github.com/user-attachments/assets/3c143872-97fe-41a8-aa39-8dceb1c0607e" />
+
 
 ## 8. Reproducibility Notes
 - Random seeds are fixed at the top of the notebook:
